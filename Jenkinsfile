@@ -15,7 +15,7 @@ pipeline {
       steps {
         sh '''
         # project_version=$(cat pom.xml | grep "version" | head -1 | awk '{print $1}' | sed "s/<version>//" | sed "s/<.*//")
-        docker build -t divyasreereddy/node-application:0.0.0 . 
+        docker build -t divyasreereddy/node-application:${PROJECT_VERSION} . 
         '''
  
       }
@@ -27,7 +27,7 @@ pipeline {
            sh '''
          #  project_version=$(cat pom.xml | grep "version" | head -1 | awk '{print $1}' | sed "s/<version>//" | sed "s/<.*//")
           docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-          docker push divyasreereddy/node-application:0.0.0
+          docker push divyasreereddy/node-application:${PROJECT_VERSION}
           '''
           }
         
