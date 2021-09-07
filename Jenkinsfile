@@ -21,7 +21,7 @@ pipeline {
       }
 
     }
-     stage('push Docker Image') {
+    stage('push Docker Image') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'DockerLogin', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
            sh '''
