@@ -9,6 +9,7 @@ pipeline {
     }
     stage('Building Docker Image') {
       steps {
+        sh 'sudo dockerd'
         sh 'docker build -t divyasreereddy/node-application:0.0.0 .'
       }
 
