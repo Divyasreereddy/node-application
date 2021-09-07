@@ -30,7 +30,7 @@ pipeline {
           docker push divyasreereddy/node-application:${PROJECT_VERSION}
           '''
           }
-        
+        }
       }
      stage('Deploy Docker Contioners ') {
       steps {
