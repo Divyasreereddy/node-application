@@ -13,5 +13,11 @@ pipeline {
       }
 
     }
+     stage('push Docker Image') {
+      steps {
+        sh 'docker push divyasreereddy/node-application:0.0.0 '
+      }
+
+    }
   }
 }
